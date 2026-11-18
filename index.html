@@ -4,19 +4,14 @@
   <meta charset="UTF-8">
   <title>Открытие приложения...</title>
   <script>
-    // Читаем параметр ?id=42 из адресной строки браузера
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
-
-    // Формируем ссылку для вашего экрана app/(tasks)/[id].tsx
-    const deepLink = id ? `myapp://${id}` : 'myapp://';
-
-    // Делаем редирект в приложение
+    const deepLink = id ? `zenboard://${id}` : 'zenboard://';
     window.location.href = deepLink;
   </script>
 </head>
 <body>
-  <p>Открываем приложение... Если ничего не произошло, <a id="manual-link" href="myapp://">нажмите сюда</a>.</p>
+  <p>Открываем приложение... Если ничего не произошло, <a id="manual-link" href="zenboard://">нажмите сюда</a>.</p>
   <script>
     document.getElementById('manual-link').href = deepLink;
   </script>
